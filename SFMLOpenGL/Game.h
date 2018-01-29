@@ -9,7 +9,7 @@
 
 using namespace std;
 using namespace sf;
-using namespace gpp;
+//using namespace gpp;
 
 class Game
 {
@@ -17,6 +17,7 @@ public:
 	Game();
 	~Game();
 	void run();
+
 private:
 	Window window;
 	bool isRunning = false;

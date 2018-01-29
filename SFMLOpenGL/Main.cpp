@@ -1,4 +1,3 @@
-//Practical 8
 
 #include <Game.h>
 
