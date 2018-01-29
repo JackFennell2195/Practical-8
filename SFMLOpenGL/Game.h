@@ -17,7 +17,8 @@ public:
 	Game();
 	~Game();
 	void run();
-
+	Vector corner[8];
+	
 private:
 	Window window;
 	bool isRunning = false;

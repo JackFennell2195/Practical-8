@@ -125,8 +125,6 @@ Vector Vector::operator^(Vector V1)
 	return Vector(V1.y * z - V1.z * y, V1.z * x - V1.x * z, V1.x * y - V1.y * x);
 }
 
-
-
 std::string Vector::toString()
 {
 	char tmpbuf[256];

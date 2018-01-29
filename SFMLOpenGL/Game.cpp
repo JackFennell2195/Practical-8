@@ -10,55 +10,58 @@ Game::Game() : window(VideoMode(800, 600), "OpenGL Cube")
 
 Game::~Game() {}
 
+Vector corners[] = {Vector(-1.0f, 1.0f, -5.0f),Vector(-1.0f, -1.0f, -5.0f),Vector(1.0f, -1.0f, -5.0f),
+					Vector(1.0f, 1.0f, -5.0f),Vector(1.0f,1.0f,-15.0f),Vector(1.0f,-1.0f,-15.0f),
+					Vector(-1.0f,1.0f,-15.0f),Vector(-1.0f,-1.0f,-15.0f)};
 float vertices[] = {
 					//Front Face 
-					-1.0f, 1.0f, -5.0f,
-					-1.0f, -1.0f, -5.0f,
-					 1.0f, -1.0f, -5.0f,
+					(corners[0].getX()), (corners[0].getY()), (corners[0].getZ()),
+					(corners[1].getX()), (corners[1].getY()), (corners[1].getZ()),
+					(corners[2].getX()), (corners[2].getY()), (corners[2].getZ()),
 					 //Front Face 
-					1.0f, 1.0f, -5.0f,
-					-1.0f, 1.0f, -5.0f,
-					1.0f, -1.0f, -5.0f,
+					(corners[3].getX()), (corners[3].getY()), (corners[3].getZ()),
+					(corners[0].getX()), (corners[0].getY()), (corners[0].getZ()),
+					(corners[2].getX()), (corners[2].getY()), (corners[2].getZ()),
 					//Right side
-					1.0f,1.0f,-5.0f,
-					1.0f,1.0f,-15.0f,
-					1.0f,-1.0f,-15.0f,
+					(corners[3].getX()), (corners[3].getY()), (corners[3].getZ()),
+					(corners[4].getX()), (corners[4].getY()), (corners[4].getZ()),
+					(corners[5].getX()), (corners[5].getY()), (corners[5].getZ()),
 					//Right side
-					1.0f,1.0f,-5.0f,
-					1.0f,-1.0f,-5.0f,
-					1.0f,-1.0f,-15.0f,
+					(corners[3].getX()), (corners[3].getY()), (corners[3].getZ()),
+					(corners[2].getX()), (corners[2].getY()), (corners[2].getZ()),
+					(corners[5].getX()), (corners[5].getY()), (corners[5].getZ()),
 					//Left side
-					-1.0f,1.0f,-15.0f,
-					-1.0f,1.0f,-5.0f,
-					-1.0f,-1.0f,-5.0f,
+					(corners[6].getX()), (corners[6].getY()), (corners[6].getZ()),
+					(corners[0].getX()), (corners[0].getY()), (corners[0].getZ()),
+					(corners[1].getX()), (corners[1].getY()), (corners[1].getZ()),
 					//Left side
-					-1.0f,1.0f,-15.0f,
-					-1.0f,-1.0f,-15.0f,
-					-1.0f,-1.0f,-5.0f,
+					(corners[6].getX()), (corners[6].getY()), (corners[6].getZ()),
+					(corners[7].getX()), (corners[7].getY()), (corners[7].getZ()),
+					(corners[1].getX()), (corners[1].getY()), (corners[1].getZ()),
 					//Top face
-					-1.0f,1.0f,-15.0f,
-					1.0f,1.0f,-15.0f,
-					1.0f,1.0f,-5.0f,
+					(corners[6].getX()), (corners[6].getY()), (corners[6].getZ()),
+					(corners[4].getX()), (corners[4].getY()), (corners[4].getZ()),
+					(corners[3].getX()), (corners[3].getY()), (corners[3].getZ()),
 					//Top face
-					-1.0f,1.0f,-15.0f,
-					-1.0f,1.0f,-5.0f,
-					1.0f,1.0f,-5.0f,
+					(corners[6].getX()), (corners[6].getY()), (corners[6].getZ()),
+					(corners[0].getX()), (corners[0].getY()), (corners[0].getZ()),
+					(corners[3].getX()), (corners[3].getY()), (corners[3].getZ()),
 					//Bottom face
-					-1.0f,-1.0f,-5.0f,
-					1.0f,-1.0f,-5.0f,
-					1.0f,-1.0f,-15.0f,
+					(corners[1].getX()), (corners[1].getY()), (corners[1].getZ()),
+					(corners[2].getX()), (corners[2].getY()), (corners[2].getZ()),
+					(corners[5].getX()), (corners[5].getY()), (corners[5].getZ()),
 					//Bottom face
-					-1.0f,-1.0f,-5.0f,
-					-1.0f,-1.0f,-15.0f,
-					1.0f,-1.0f,-15.0f,
+					(corners[1].getX()), (corners[1].getY()), (corners[1].getZ()),
+					(corners[7].getX()), (corners[7].getY()), (corners[7].getZ()),
+					(corners[5].getX()), (corners[5].getY()), (corners[5].getZ()),
 					//Back Face
-					-1.0f,1.0f,-15.0f,
-					1.0f,1.0f,-15.0f,
-					1.0f,-1.0f,-15.0f,
+					(corners[6].getX()), (corners[6].getY()), (corners[6].getZ()),
+					(corners[4].getX()), (corners[4].getY()), (corners[4].getZ()),
+					(corners[5].getX()), (corners[5].getY()), (corners[5].getZ()),
 					//Back Face
-					-1.0f,1.0f,-15.0f,
-					-1.0f,-1.0f,-15.0f,
-					1.0f,-1.0f,-15.0f,
+					(corners[6].getX()), (corners[6].getY()), (corners[6].getZ()),
+					(corners[7].getX()), (corners[7].getY()), (corners[7].getZ()),
+					(corners[5].getX()), (corners[5].getY()), (corners[5].getZ())
 					};
 
 float colors[] = { 
@@ -169,6 +172,37 @@ void Game::initialize()
 
 void Game::update()
 {
+	Matrix3 matrix;
+	initialize();
+	if (Keyboard::isKeyPressed(Keyboard::R))
+	{
+		
+		
+	}
+
+	if (Keyboard::isKeyPressed(Keyboard::E))
+	{
+		
+	}
+
+	if (Keyboard::isKeyPressed(Keyboard::S))
+	{
+		
+	}
+	if (Keyboard::isKeyPressed(Keyboard::D))
+	{
+		
+	}
+
+	if (Keyboard::isKeyPressed(Keyboard::T))
+	{
+		
+	}
+	if (Keyboard::isKeyPressed(Keyboard::Y))
+	{
+		
+	}
+
 	elapsed = clock.getElapsedTime();
 
 	cout << "Update up" << endl;
