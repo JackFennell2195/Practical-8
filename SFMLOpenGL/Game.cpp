@@ -176,31 +176,54 @@ void Game::update()
 	initialize();
 	if (Keyboard::isKeyPressed(Keyboard::R))
 	{
-		
-		
+		for (index = 0; index < 8; index++)
+		{
+			cout << "rotating right" << endl;
+			corners[index] = matrix.Rotation(1) * corners[index];
+		}
 	}
 
 	if (Keyboard::isKeyPressed(Keyboard::E))
 	{
-		
+		for (index = 0; index < 8; index++)
+		{
+			cout << "rotating left" << endl;
+			corners[index] = matrix.Rotation(-1) * corners[index];
+		}
 	}
 
 	if (Keyboard::isKeyPressed(Keyboard::S))
 	{
-		
+		for (index = 0; index < 8; index++)
+		{
+			cout << "getting bigger" << endl;
+			corners[index] = matrix.Scale(101, 101) * corners[index];
+		}
 	}
 	if (Keyboard::isKeyPressed(Keyboard::D))
 	{
-		
+		for (index = 0; index < 8; index++)
+		{
+			cout << "getting smaller" << endl;
+			corners[index] = matrix.Scale(99, 99) * corners[index];
+		}
 	}
 
 	if (Keyboard::isKeyPressed(Keyboard::T))
 	{
-		
+		for (index = 0; index < 8; index++)
+		{
+			cout << "translate right" << endl;
+			corners[index] = matrix.Translate(1, 1) * corners[index];
+		}
 	}
 	if (Keyboard::isKeyPressed(Keyboard::Y))
 	{
-		
+		for (index = 0; index < 8; index++)
+		{
+			cout << "translate left" << endl;
+			corners[index] = matrix.Translate(-1, -1) * corners[index];
+		}
 	}
 
 	elapsed = clock.getElapsedTime();

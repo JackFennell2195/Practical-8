@@ -17,7 +17,7 @@ public:
 	Game();
 	~Game();
 	void run();
-	Vector corner[8];
+	Vector corners[8];
 	
 private:
 	Window window;
@@ -27,6 +27,7 @@ private:
 	void render();
 	void unload();
 
+	GLuint index;
 	Clock clock;
 	Time elapsed;
 
